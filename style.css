@@ -1,71 +1,146 @@
- body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0A192F, #871EFF, #64D2FF);
-    background-size: 600% 600%;
-    animation: gradientMove 15s ease infinite;
-    color: #fff;
-    position: relative;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Courier New', monospace;
+  /* estilo dev */
+  overflow: hidden;
+  background: linear-gradient(135deg, #0A192F, #871EFF, #64D2FF);
+  background-size: 600% 600%;
+  animation: gradientMove 15s ease infinite;
+  color: #fff;
+  position: relative;
+}
 
-  /* Partículas / linhas brilhantes */
-  .particle {
-    position: absolute;
-    width: 2px;
-    height: 20px;
-    background: rgba(255,255,255,0.8);
-    top: 0;
-    animation: particleMove linear infinite;
-  }
+.code-span {
+  position: absolute;
+  top: -20px;
+  /* começa fora da tela */
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+  opacity: 0;
+  animation: codeFall linear infinite;
+}
 
-  @keyframes particleMove {
-    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
-    50% { transform: translateY(50vh) translateX(10px) scale(1.2); opacity: 0.4; }
-    100% { transform: translateY(100vh) translateX(-10px) scale(0.8); opacity: 0; }
-  }
-
-  /* Container da intro */
-  .intro img {
-    width: 400px;
-    max-width: 80vw;
+@keyframes codeFall {
+  0% {
+    transform: translateY(0) translateX(0);
     opacity: 0;
-    animation: zoomRotate 2s ease forwards;
-    z-index: 1;
   }
 
-  .intro h1 {
-    font-size: 4rem;
-    margin-top: 30px;
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) translateX(20px);
     opacity: 0;
-    animation: fadeInUp 1.5s ease forwards;
-    animation-delay: 2s;
-    text-align: center;
-    z-index: 1;
+  }
+}
+
+/* Intro central */
+.intro img {
+  width: 400px;
+  max-width: 80vw;
+  opacity: 0;
+  animation: zoomRotate 2s ease forwards;
+  z-index: 1;
+}
+
+.intro h1 {
+  font-size: 4rem;
+  margin-top: 30px;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 2s;
+  text-align: center;
+  z-index: 1;
+}
+
+@keyframes zoomRotate {
+  0% {
+    transform: scale(0.2) rotate(-15deg);
+    opacity: 0;
   }
 
-  /* Zoom + rotação da imagem */
-  @keyframes zoomRotate {
-    0% { transform: scale(0.2) rotate(-15deg); opacity: 0; }
-    50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+    opacity: 1;
   }
 
-  /* Fade do nome com subida */
-  @keyframes fadeInUp {
-    0% { transform: translateY(50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
   }
 
-  /* Movimento do gradiente de fundo */
-  @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Estilo do botão */
+.start-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 40px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #8720ff, #64d2ff);
+  border: none;
+  border-radius: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.start-btn:hover::before {
+  left: 100%;
+}
+
+.start-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(100, 210, 255, 0.4);
+}
