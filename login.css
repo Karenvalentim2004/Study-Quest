@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #0A192F, #871EFF, #64D2FF);
+}
+
+#container{
+    position: absolute;
+    width: 80vmin;
+    height: 80vmin;
+    background-color: rgb(255, 255, 255);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3vmin;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 1vmin 1vmin 10vmin rgb(72, 0, 180);
+
+}
+
+.inside{
+    float: left;
+    width: 50%;
+    height: 100%; 
+}
+
+.caixa1{
+    position: relative;
+    color: white;
+    background-image: url(../images/background\ blue.jpg);
+    background-size: cover;
+    
+}
+
+#logo{
+    width: 50%; 
+}
+
+#textoBoasVindas{
+    position: relative;
+    font-size: 3vmin;
+    top: 35%;
+    margin: 10%;
+    transform: translate(0%, -50%);
+}
+
+.caixa1>p{
+    position: absolute;
+    bottom: 5px;
+    left: 2vmin;
+    font-size: 2vmin;
+
+}
+
+.caixa2{
+    position: relative;
+    color: rgb(78, 78, 78);
+}
+
+#textoLogin{
+    margin-left: 3vmin;
+    
+}
+
+#textoLogin>h1{
+    color: rgb(3, 96, 101);
+    font-size: 5vmin;
+    margin-bottom: 0px;
+
+}
+
+#textoLogin>p{
+    color: rgb(113, 113, 113);
+    font-size: 2vmin;
+    
+
+
+}
+
+#caixasInput{
+    font-size: 2vmin;
+    margin-left: 5vmin;
+    margin-top: 10vmin;
+}
+
+#caixasInput>p{
+    color: rgb(113, 113, 113);
+    margin-bottom: 0.5vmin;
+}
+
+#caixasInput>input{
+    width: 29vmin;
+    height: 3vmin;
+    border: 1px solid rgb(137, 137, 137);
+    border-radius: 0.8vmin;
+}
+
+#lembrarSenha{
+    position: relative;
+    width: 30vmin;
+    margin-top: 1vmin;
+    margin-left: 4.8vmin;
+    /* margin-bottom: 2.5vmin; */
+    overflow: hidden;
+}
+#lembrarSenha>input{
+    position: absolute;
+    top: 0px;
+    width: 2.3vmin;
+    height: 2.3vmin;
+    border-radius: 0.1vmin;
+}
+#lembrarSenha>p{
+    /* float: right; */
+    margin-left: 4vmin;
+    margin-top: 3px;
+    font-size: 2vmin;
+    
+}
+
+#botaoLogin{
+    margin-top: 3vmin;
+    margin-left: 5vmin;
+}
+#botaoLogin>input{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2vmin;
+    width: 29vmin;
+    height: 4vmin;
+    background-color: rgb(79, 187, 255);
+    border: 0px solid white;
+    border-radius: 10px;
+    
+}
+#botaoLogin>input:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(79, 187, 255);
+    border: 0.1vmin solid rgb(79, 187, 255);
+    cursor: pointer;
+}
+#botaoLogin>input:active{
+    background-color: rgb(255, 255, 255);
+    color: rgb(96, 17, 255);
+    border: 0.1vmin solid rgb(96, 17, 255);
+}
+
+#textosFinal{
+    margin-top: 1vmin;
+    margin-left: 5vmin;
+}
+#textosFinal>p{
+    font-size: 1.25vmin;
+    display: inline;
+    margin-right: 4.5vmin;
+}
+#textosFinal>p>a{
+    text-decoration: none;
+
+}
